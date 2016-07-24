@@ -16,14 +16,7 @@
 'use strict';
 
 var express = require('express');
-var fs = require('fs');
-var __dirname = 'C:/Users/Pro/Documents/google engine/nodejs-docs-samples/appengine/hello-world';
-/*
-app.configure(function(){
-  app.use('/public', express.static(__dirname + '/public'));  
-  app.use(express.static(__dirname + '/public')); 
-});
-*/
+
 var app = express();
 /*
 app.get('/', function (req, res) {
@@ -33,22 +26,18 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
 	
 	var body = "";
-  var filePath = __dirname + '/public/data.txt';
-  req.on('data', function (chunk) {
+  		req.on('data', function (chunk) {
     	body += chunk;
-  });
-  req.on('end', function () {
+  	});
+  	req.on('end', function () {
     	console.log('POSTed: ' + body);
     	res.status(200).send("POSTed:" + body);
-      fs.appendFile(filePath, body, function() {
-        //    respond.end();
-      });
 	});
 	//var mes = req.body;
 	//console.dir(req.body);
 	//res.status(200).send(body);
 	
-  console.log("Hello");
+    console.log("Hello");
 
 });
 
